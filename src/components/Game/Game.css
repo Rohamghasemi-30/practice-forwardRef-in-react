@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'vazir-bold';
+    src: url('./fonts/Vazir-Bold-FD-WOL.ttf');
+  }
+
+.game-container {
+    display: inline-block;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid #6f42c1;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  button {
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #6f42c1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'vazir-bold';
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background-color: #5a32a3;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  h2 {
+    color: #000000;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'vazir-bold';
+  }
+  

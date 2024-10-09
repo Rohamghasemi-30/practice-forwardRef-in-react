@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'vazir-bold';
+  src: url('./fonts/Vazir-Bold-FD-WOL.ttf');
+}
+
+.App {
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'vazir-bold';
+}
+
