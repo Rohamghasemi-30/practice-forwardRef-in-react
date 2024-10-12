@@ -1,7 +1,10 @@
 import React, { useState, forwardRef } from 'react';
-import "../Game/Game.css"
+import "../Game/Game.css";
+
 const Game = forwardRef((props, ref) => {
   const [result, setResult] = useState('');
+  const [point, setPoint] = useState(0);
+  const [Box, setBox] = useState(false);
 
   const rockPaperScissorsGame = ['سنگ', 'کاغذ', 'قیچی'];
 
@@ -17,12 +20,25 @@ const Game = forwardRef((props, ref) => {
       (userChoice === 'قیچی' && computerChoice === 'کاغذ')
     ) {
       gameResult = 'شما بردید';
-
+      setPoint((prevPoint) => {
+        const newPoint = prevPoint + 3;
+        if (newPoint >= 12) {
+          setBox(true);
+        }
+        return newPoint;
+      });
     } else {
       gameResult = 'کامپیوتر برد';
+      setPoint((prevPoint) => prevPoint - 3);
     }
 
     setResult(`شما: ${userChoice} | کامپیوتر: ${computerChoice} = ${gameResult}`);
+  };
+
+  const resetGame = () => {
+    setPoint(0);
+    setResult('');
+    setBox(false);
   };
 
   return (
@@ -33,7 +49,14 @@ const Game = forwardRef((props, ref) => {
         <button onClick={() => playGame('کاغذ')}>🖐 کاغذ</button>
         <button onClick={() => playGame('قیچی')}>✌ قیچی</button>
       </div>
-      <h2>{result}</h2>
+      <h2 className='result'>{result}</h2>
+      <h3>امتیاز: {point} ⭐</h3>
+      {Box && 
+        <div className="win-box">
+          <h2>شما بردید</h2>
+          <button onClick={resetGame}>شروع مجدد</button>
+        </div>
+      }
     </div>
   );
 });

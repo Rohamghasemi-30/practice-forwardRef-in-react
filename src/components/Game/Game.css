@@ -43,7 +43,7 @@
     transform: translateY(0);
   }
   
-  h2 {
+  h2.result {
     color: #000000;
     margin-top: 20px;
     background-color: #f0f0f0;
